@@ -1,0 +1,92 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:yog="http://artifact.nsense.com/employee">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <yog:getEmployeeListRequest>
+            <yog:function>list</yog:function>
+        </yog:getEmployeeListRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
+
+
+<!-- Create New Employee Employee -->
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://artifact.nsense.com/employee">
+<soapenv:Header/>
+<soapenv:Body>
+    <ns2:createEmployeeRequest>
+        <ns2:createEmployee>
+            <ns2:firstName>Sunita</ns2:firstName>
+            <ns2:lastName>Prashad</ns2:lastName>
+            <ns2:email>sunita@gmail.com</ns2:email>
+            <ns2:phoneNumber>97692712935</ns2:phoneNumber>
+            <ns2:jobId>IT_PROG</ns2:jobId>
+            <ns2:salary>250000.0</ns2:salary>
+            <ns2:commission>0.3</ns2:commission>
+            <ns2:managerId>7887</ns2:managerId>
+            <ns2:departmentId>102356</ns2:departmentId>
+        </ns2:createEmployee>
+    </ns2:createEmployeeRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://artifact.nsense.com/employee">
+<soapenv:Header/>
+<soapenv:Body>
+    <ns2:createEmployeeRequest>
+        <ns2:createEmployee>
+
+            <ns2:bankAccountList >
+                <ns2:bankName>SBI</ns2:bankName>
+                <ns2:accountType>Current</ns2:accountType>
+                <ns2:accountHolderName>Rahul Rajbhar</ns2:accountHolderName>
+                <ns2:accountNumber>SBI421563892</ns2:accountNumber>
+                <ns2:branch>Thane</ns2:branch>
+                <ns2:ifscCode>SBI00210</ns2:ifscCode>
+            </ns2:bankAccountList>
+
+            <ns2:firstName>Sunita</ns2:firstName>
+            <ns2:lastName>Prashad</ns2:lastName>
+            <ns2:email>sunita@gmail.com</ns2:email>
+            <ns2:phoneNumber>97692712935</ns2:phoneNumber>
+            <ns2:jobId>IT_PROG</ns2:jobId>
+            <ns2:salary>250000.0</ns2:salary>
+            <ns2:commission>0.3</ns2:commission>
+            <ns2:managerId>7887</ns2:managerId>
+            <ns2:departmentId>102356</ns2:departmentId>
+        </ns2:createEmployee>
+    </ns2:createEmployeeRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+<!-- Delete Employee -->
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns2="http://artifact.nsense.com/employee">
+<soapenv:Header/>
+<soapenv:Body>
+    <ns2:deleteEmployeeRequest>
+        <ns2:employeeId>1</ns2:employeeId>
+    </ns2:deleteEmployeeRequest>
+</soapenv:Body>
+</soapenv:Envelope>
+
+
+<!-- Edit Employee -->
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:yog="http://artifact.nsense.com/employee">
+
+<SOAP-ENV:Header/>
+<SOAP-ENV:Body>
+    <yog:editEmployeeDetailsRequest>
+        <yog:employee>
+            <yog:employeeId>2</yog:employeeId>
+            <yog:firstName>Amarjeet</yog:firstName>
+            <yog:lastName>Raj</yog:lastName>
+            <yog:email>Amarjeet@gmail.com</yog:email>
+            <yog:phoneNumber>97692712935</yog:phoneNumber>
+            <yog:jobId>IT_MGR</yog:jobId>
+            <yog:salary>350000.0</yog:salary>
+            <yog:commission>0.3</yog:commission>
+            <yog:managerId>888032</yog:managerId>
+            <yog:departmentId>88023</yog:departmentId>
+        </yog:employee>
+    </yog:editEmployeeDetailsRequest>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,17 @@
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://artifact.nsense.com/bankAccount"
+           targetNamespace="http://artifact.nsense.com/bankAccount"
+           elementFormDefault="qualified">
+    <xs:complexType name="bankAccount">
+        <xs:sequence>
+            <xs:element name="bankId" type="xs:int" />
+            <xs:element name="bankName" type="xs:string" />
+            <xs:element name="accountType" type="xs:string" />
+            <xs:element name="accountHolderName" type="xs:string" />
+            <xs:element name="accountNumber" type="xs:int" />
+            <xs:element name="branch" type="xs:string" />
+            <xs:element name="ifscCode" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

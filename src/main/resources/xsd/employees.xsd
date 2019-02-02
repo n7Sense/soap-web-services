@@ -1,0 +1,122 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://artifact.nsense.com/employee"
+           targetNamespace="http://artifact.nsense.com/employee"
+           elementFormDefault="qualified">
+
+    <xs:import schemaLocation="bankAccount.xsd" namespace="http://artifact.nsense.com/bankAccount"/>
+
+    <xs:complexType name="bankAccount">
+        <xs:sequence>
+            <xs:element name="bankId" type="xs:int" />
+            <xs:element name="bankName" type="xs:string" />
+            <xs:element name="accountType" type="xs:string" />
+            <xs:element name="accountHolderName" type="xs:string" />
+            <xs:element name="accountNumber" type="xs:int" />
+            <xs:element name="branch" type="xs:string" />
+            <xs:element name="ifscCode" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="employee">
+        <xs:sequence>
+            <xs:element name="bankAccountList" type="tns:bankAccount" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="employeeId" type="xs:int" />
+            <xs:element name="firstName" type="xs:string" />
+            <xs:element name="lastName" type="xs:string" />
+            <xs:element name="email" type="xs:string" />
+            <xs:element name="phoneNumber" type="xs:string" />
+            <xs:element name="jobId" type="xs:string" />
+            <xs:element name="salary" type="xs:double" />
+            <xs:element name="commission" type="xs:float" />
+            <xs:element name="managerId" type="xs:int" />
+            <xs:element name="departmentId" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getEmployeeDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employee" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getEmployeeListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="function" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeList" type="tns:employee" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="tns:message" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="editEmployeeDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employee" type="tns:employee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="editEmployeeDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="tns:message" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="message">
+        <xs:sequence>
+            <xs:element name="message" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="createEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="createEmployee" type="tns:employee"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
